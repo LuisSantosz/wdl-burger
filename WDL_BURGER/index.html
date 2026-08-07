@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="WDL Burger — hambúrgueres artesanais com experiência premium." />
+  <title>WDL BURGER | Cardápio Premium</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="WDL Burger">
+      <span class="brand-mark"><i class="fa-solid fa-burger"></i></span>
+      <span>
+        <strong>WDL</strong>
+        <em>BURGER</em>
+      </span>
+    </a>
+
+    <div class="top-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button class="cart-mini" id="openCart" aria-label="Abrir carrinho">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal">
+        <span class="eyebrow"><i class="fa-solid fa-fire"></i> Burger artesanal. Experiência premium.</span>
+        <h1>O sabor que<br><span>vira desejo.</span></h1>
+        <p>Pães selados na manteiga, blends suculentos, molhos autorais e combinações criadas para impressionar desde a primeira mordida.</p>
+        <div class="hero-actions">
+          <a href="#cardapio" class="btn btn-primary">Ver cardápio <i class="fa-solid fa-arrow-down"></i></a>
+          <button class="btn btn-glass" id="heroCartBtn"><i class="fa-solid fa-bag-shopping"></i> Meu pedido</button>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4,9</strong><span><i class="fa-solid fa-star"></i> avaliação</span></div>
+          <div><strong>25–40</strong><span>min entrega</span></div>
+          <div><strong>100%</strong><span>artesanal</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal delay-1">
+        <div class="hero-badge"><span>mais pedido</span><strong>WDL SUPREME</strong></div>
+        <div class="hero-orbit orbit-a"></div>
+        <div class="hero-orbit orbit-b"></div>
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=90" alt="Hambúrguer artesanal WDL Supreme" class="hero-image" />
+        </div>
+        <div class="floating-card price-card"><small>a partir de</small><strong>R$ 34,90</strong></div>
+        <div class="floating-card ingredient-card"><i class="fa-solid fa-leaf"></i><span>Ingredientes<br>selecionados</span></div>
+      </div>
+    </section>
+
+    <section class="benefits-strip reveal">
+      <div><i class="fa-solid fa-motorcycle"></i><span><strong>Entrega rápida</strong><small>Na sua região</small></span></div>
+      <div><i class="fa-solid fa-burger"></i><span><strong>Blend artesanal</strong><small>Carne selecionada</small></span></div>
+      <div><i class="fa-solid fa-shield-heart"></i><span><strong>Feito na hora</strong><small>Fresco e suculento</small></span></div>
+      <div><i class="fa-solid fa-credit-card"></i><span><strong>Pagamento fácil</strong><small>Pix, cartão ou dinheiro</small></span></div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">nosso cardápio</span>
+          <h2>Escolha seu próximo <span>favorito.</span></h2>
+        </div>
+        <p>Do clássico bem feito às combinações mais intensas. Todos preparados na hora.</p>
+      </div>
+
+      <div class="search-panel" id="searchPanel">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Buscar burger, acompanhamento ou bebida..." autocomplete="off" />
+        <button id="clearSearch" aria-label="Limpar busca"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="categories reveal" id="categories">
+        <button class="category active" data-category="todos"><i class="fa-solid fa-border-all"></i> Todos</button>
+        <button class="category" data-category="burgers"><i class="fa-solid fa-burger"></i> Burgers</button>
+        <button class="category" data-category="combos"><i class="fa-solid fa-box-open"></i> Combos</button>
+        <button class="category" data-category="porcoes"><i class="fa-solid fa-bowl-food"></i> Porções</button>
+        <button class="category" data-category="bebidas"><i class="fa-solid fa-glass-water"></i> Bebidas</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+      <div class="empty-state" id="emptyState">
+        <i class="fa-solid fa-burger"></i>
+        <h3>Nada encontrado</h3>
+        <p>Tente buscar outro item ou escolha uma categoria diferente.</p>
+      </div>
+    </section>
+
+    <section class="signature reveal">
+      <div class="signature-image">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=90" alt="Hambúrguer premium WDL Burger" loading="lazy" />
+      </div>
+      <div class="signature-copy">
+        <span class="eyebrow">assinatura WDL</span>
+        <h2>Não vendemos apenas burger. <span>Entregamos experiência.</span></h2>
+        <p>Textura, temperatura, crocância e molho na medida certa. Cada detalhe foi pensado para transformar um pedido comum em um momento memorável.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Pão brioche tostado na manteiga</li>
+          <li><i class="fa-solid fa-check"></i> Blend artesanal de 160g</li>
+          <li><i class="fa-solid fa-check"></i> Molhos especiais da casa</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Navegação mobile">
+    <a href="#inicio" class="active"><i class="fa-solid fa-house"></i><span>Início</span></a>
+    <a href="#cardapio"><i class="fa-solid fa-burger"></i><span>Cardápio</span></a>
+    <button id="mobileCartBtn"><i class="fa-solid fa-bag-shopping"></i><span>Pedido</span><b id="mobileCartCount">0</b></button>
+  </nav>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras">
+    <div class="cart-header">
+      <div><span>Seu pedido</span><h3>Finalizar pedido</h3></div>
+      <button id="closeCart" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-body" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <div><i class="fa-solid fa-bag-shopping"></i></div>
+      <h4>Seu carrinho está vazio</h4>
+      <p>Adicione seus favoritos e eles aparecerão aqui.</p>
+      <button class="btn btn-primary" id="continueShopping">Escolher burger</button>
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="delivery-line"><span>Entrega</span><strong>A calcular</strong></div>
+      <div class="total-line"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="checkout-btn" id="checkoutBtn">
+        <span><i class="fa-brands fa-whatsapp"></i> Enviar pedido</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <small>Você poderá revisar a mensagem antes de enviar.</small>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span>Item adicionado ao pedido</span></div>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark"><i class="fa-solid fa-burger"></i></span><strong>WDL BURGER</strong></div>
+    <p>Feito para quem leva hambúrguer a sério.</p>
+    <small>© 2026 WDL Burger. Todos os direitos reservados.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
